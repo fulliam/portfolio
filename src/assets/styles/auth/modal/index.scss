@@ -1,0 +1,131 @@
+.auth-modal {
+  --bg: #e6971bd6;
+  --color-text: rgb(35, 35, 31);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  &__header {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  &__body {
+    --border-width: 4px;
+
+    background: var(--bg);
+    border-radius: 40px;
+    width: 100%;
+    padding-bottom: 20px;
+    box-shadow: 10px 10px 10px black;
+
+    &:after {
+      position: absolute;
+      content: "";
+      top: calc(-1 * var(--border-width));
+      left: calc(-1 * var(--border-width));
+      z-index: -1;
+      width: calc(100% + var(--border-width) * 2);
+      height: calc(100% + var(--border-width) * 2);
+      background: linear-gradient(
+          60deg,
+          hsl(224, 85%, 66%),
+          hsl(269, 85%, 66%),
+          hsl(314, 85%, 66%),
+          hsl(359, 85%, 66%),
+          hsl(44, 85%, 66%),
+          hsl(89, 85%, 66%),
+          hsl(134, 85%, 66%),
+          hsl(179, 85%, 66%)
+      );
+      background-size: 300% 300%;
+      background-position: 0 50%;
+      border-radius: 40px;
+      animation: moveGradient 4s alternate infinite;
+
+      @keyframes moveGradient {
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+    }
+  }
+
+  &__content {
+    width: auto;
+    display: flex;
+    position: relative;
+    flex: content;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__dialog {
+    margin: 0;
+    width: 50%;
+  }
+
+  &__button {
+    &-show {
+      --color-text: #dac400;
+
+      cursor: pointer;
+      content: "Auth";
+      z-index: 99;
+      color: var(--color-text);
+      background-color: var(--bg);
+      width: 52px;
+      height: 32px;
+      border-radius: 20px;
+      border: 2px solid var(--color-text);
+      margin: 10px;
+      top: 50%;
+      left: 0;
+      transition: 0.5s all;
+      position: absolute;
+
+      &:hover {
+        --color-text: #d5842d;
+      }
+    }
+
+    &-close {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 50%;
+      background-color: #9ceeee;
+      background:
+        linear-gradient(45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa))),
+        linear-gradient(-45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa)));
+      --weight: 2px;
+      --aa: 1px;
+      --color: rgb(251, 251, 251);
+
+      &:hover {
+        animation: rotate 3s infinite;
+        border-radius: 50%;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}

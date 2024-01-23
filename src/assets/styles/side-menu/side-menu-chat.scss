@@ -1,0 +1,113 @@
+.side-menu-chat-nav {
+    display: contents;
+    position: absolute;
+
+    & ul {
+        list-style-type: none;
+        overflow: scroll;
+        overflow-x: hidden;
+      }
+}
+
+.side-menu-chat {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.side-menu-chat--visible {
+    pointer-events: auto;
+}
+
+.app-menu-chat {
+    background-color: #fff;
+    color: #fff;
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    height: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateX(103%);
+            transform: translateX(103%);
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    z-index: 160;
+    pointer-events: auto;
+    right: -100%;
+}
+
+.side-menu-chat--visible .app-menu-chat {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    padding-top: 100px;
+}
+
+.side-menu-chat--animatable .app-menu-chat {
+    transition: all 130ms ease-in;
+}
+
+.side-menu-chat--visible.side-menu-chat--animatable  .app-menu-chat {
+    transition: all 330ms ease-out;
+}
+
+.side-menu-chat:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    will-change: opacity;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
+}
+
+.side-menu-chat--visible.side-menu-chat:after {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.side-menu-chat-icon {
+  --color-text: #dac400;
+  --bg: rgba(0,0,0,0);
+  cursor: pointer;
+  content: "Menu";
+  z-index: 99;
+  color: var(--color-text);
+  background-color: var(--bg);
+  width: 52px;
+  height: 32px;
+  border-radius: 20px;
+  border: 2px solid var(--color-text);
+  margin: 10px;
+  top: 50%;
+  right: 0;
+  position: fixed;
+  transition: color 0.5s, border 0.5s;
+
+  &:hover {
+    --color-text: #d5842d;
+  }
+}
+
+.app-menu-chat {
+  width: 300px;
+  height: 100%;
+  box-shadow: none;
+  background-color: #4d8299;
+}
+
+.side-menu-chat:after {
+  width: 100%;
+  height: 100%;
+}
+

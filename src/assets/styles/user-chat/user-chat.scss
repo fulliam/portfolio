@@ -1,0 +1,86 @@
+.time {
+  color: grey;
+  display: contents;
+  font-size: 12px;
+}
+
+.message {
+  bottom: 10%;
+  position: relative;
+  display: flex;
+  word-wrap: anywhere;
+  padding: 5px;
+  top: 0px;
+
+  --bg: #1e1e1e;
+}
+
+.sent-message {
+  color: black;
+  text-align: initial;
+  align-self: flex-end;
+  margin-right: 0px;
+  width: 100%;
+  padding: 12px;
+  background: #f1f1f1;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.received-message {
+  color: black;
+  all: initial;
+  padding-right: initial;
+  padding-right: 10%;
+  padding: 12px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.chat {
+  background-color: #f0f8ffb8;
+  width: 70%;
+  height: 70vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  border-radius:30px;
+  padding: 10px;
+  left: 15%;
+  bottom: 8%;
+  position: absolute;
+}
+
+.send-message {
+  position: absolute;
+  bottom: 2%;
+  display: flex;
+  width: 70%;
+  height: 40px;
+  left: 15%;
+}
+
+.send-message-label {
+  width: 100%;
+}
+
+.send-message-input {
+  width: 90%;
+  height: 100%;
+  border: none;
+  left: 20px;
+  position: relative;
+  border-radius: 30px 0 0 30px;
+  max-height: 200px;
+  min-height: 35px;
+  resize: none;
+  font-size: 18px;
+  padding-left: 24px;
+  overflow: auto;
+
+  &:focus {
+    outline: none !important;
+    border: none;
+  }
+}
+
+select {
+  width: 100px;
+}

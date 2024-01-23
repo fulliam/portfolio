@@ -1,0 +1,40 @@
+.dropdown {
+    position: absolute;
+    left: 1%;
+  
+  &-toggle {
+      padding: 5px 10px;
+      background-color: #bd3c3c;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: bolder;
+  }
+  
+    &-menu {
+        position: absolute;
+        min-width: 135px;
+        background-color: #f1f1f1;
+        padding: 5px;
+        margin-bottom: 5px;
+        list-style-type: none;
+        display: none;
+        border-radius: 10px;
+  
+        &.open {
+            display: block;
+            bottom: 100%;
+        }
+    
+        & li {
+            cursor: pointer;
+            padding: 5px;
+
+            &:hover {
+                background-color: #ddd;
+                border-radius: 10px;
+            }
+        }
+    }
+}  

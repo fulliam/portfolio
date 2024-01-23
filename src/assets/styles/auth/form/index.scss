@@ -1,0 +1,60 @@
+.login-wrapper {
+    color: var(--color-text);
+    margin: 40px;
+    margin-top: 45px;
+}
+
+.label-username {
+    margin: 10px;
+    padding: 10px;
+}
+
+.label-password {
+    margin: 10px;
+    padding: 10px;
+}
+
+.error-message {
+    font-size: smaller;
+    display: flex;
+    color: #da5c5c;
+    justify-content: center;
+}
+
+.input-username, 
+.input-password {
+    color: var(--color-text);
+    outline: 0;
+    border: 2px solid var(--color-text);
+    box-shadow: inset 5px 5px 5px #00000070;
+    background: linear-gradient(60deg, hsl(224, 85%, 66%), hsl(269, 85%, 66%), hsl(314, 85%, 66%), hsl(359, 85%, 66%), hsl(44, 85%, 66%), hsl(89, 85%, 66%), hsl(134, 85%, 66%), hsl(179, 85%, 66%));
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: 40px;
+    animation: moveGradient 4s alternate infinite;
+    color: black;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.input-username:invalid:focus,
+.input-password:invalid:focus {
+    border-color: #fb00009d;
+}
+
+.status {
+    color: #fff;
+    position: absolute;
+    bottom: 12px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    text-shadow: none;
+}
